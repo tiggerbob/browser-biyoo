@@ -1,0 +1,34 @@
+{
+  "name": "Biyoo!",
+  "version": "0.1.0",
+  "description": "nom nom nom",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["*://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "exclude_globs": ["chrome://*/*"],
+      "js": ["contentScript.js"],
+      "css": ["content-ext.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*"
+      ],
+      "matches": ["*://*/*"],
+      "exclude_globs": ["chrome://*/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "128": "images/biyoo_icon.png"
+    },
+    "default_title": "Biyoo!",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
